@@ -1,0 +1,20 @@
+{
+  "name": "friendmatch",
+  "version": "1.0.0",
+  "description": "Matches friends based on user input",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertbernardbrown/FriendMatch.git"
+  },
+  "author": "Bob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertbernardbrown/FriendMatch/issues"
+  },
+  "homepage": "https://github.com/robertbernardbrown/FriendMatch#readme"
+}
