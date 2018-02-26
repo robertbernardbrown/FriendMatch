@@ -8,5 +8,24 @@ const connection = mysql.createConnection({
 });
 
 let friendArr = [];
+let existingFriends = [];
 
-module.exports = friendArr;
+module.exports = {
+  friendArr: friendArr,
+  existingFriends: existingFriends,
+  existing: function(arr) {
+    connection.connect(function () {
+      fillExisting(arr);
+    });
+      
+    function fillExisting (arr) {
+      connection.query("SELECT * FROM friend JOIN friend_responses ON friend_responses.friend_id = friend.friend_id", function (error, results) {
+        for (var i = 0; i < results.length; i++) {
+          var element = results[i];
+          arr.push(element);
+        }
+        console.log(arr);
+      });
+    }
+  }
+};
