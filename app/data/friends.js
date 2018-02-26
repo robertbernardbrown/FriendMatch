@@ -24,7 +24,6 @@ module.exports = {
           var element = results[i];
           arr.push(element);
         }
-        console.log(arr);
       });
     }
   }
