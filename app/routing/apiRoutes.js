@@ -13,8 +13,7 @@ module.exports = (app) => {
   app.post("/api/friends", (req, res) => {
     friendDBActions.connect;
     let newFriend = req.body;
-    res.json(newFriend);
-    let newFriendVals = [0, newFriend.question_01,  newFriend.question_02, newFriend.question_03,  newFriend.question_04, newFriend.question_05, newFriend.question_06, newFriend.question_07, newFriend.question_08, newFriend.question_09, newFriend.question_10];
+    let newFriendVals = [0, newFriend.q1,  newFriend.q2, newFriend.q3,  newFriend.q4, newFriend.q5, newFriend.q6, newFriend.q7, newFriend.q8, newFriend.q9, newFriend.q10];
     friendDBActions.fetchFriendResponses(friendMatcher);
     function friendMatcher (arr) {
       let index = 0;
@@ -41,8 +40,9 @@ module.exports = (app) => {
       friendDBActions.displayMatchFriendData(showData, index);
       function showData (arr) {
         console.log(arr);
+        res.json(arr);
       }
-      friendDBActions.addToDB(newFriend.friend_name, newFriend.friend_pic, newFriend.question_01,  newFriend.question_02, newFriend.question_03,  newFriend.question_04, newFriend.question_05, newFriend.question_06, newFriend.question_07, newFriend.question_08, newFriend.question_09, newFriend.question_10);
+      friendDBActions.addToDB(newFriend.friend_name, newFriend.friend_pic, newFriend.q1,  newFriend.q2, newFriend.q3,  newFriend.q4, newFriend.q5, newFriend.q6, newFriend.q7, newFriend.q8, newFriend.q9, newFriend.q10);
     }
   });
 };

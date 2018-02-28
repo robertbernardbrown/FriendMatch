@@ -10,6 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
@@ -61,7 +63,6 @@
                   <option value="5">5 (Strongly Agree)</option>
                 </select>
             
-            
                 <h3><strong>Question 3</strong></h3>
                 <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
                 <select class="chosen-select" id="q3">
@@ -72,7 +73,6 @@
                   <option value="4">4</option>
                   <option value="5">5 (Strongly Agree)</option>
                 </select>
-            
             
                 <h3><strong>Question 4</strong></h3>
                 <h4>You rarely do something just out of sheer curiosity.</h4>
@@ -85,7 +85,6 @@
                   <option value="5">5 (Strongly Agree)</option>
                 </select>
             
-            
                 <h3><strong>Question 5</strong></h3>
                 <h4>People can rarely upset you.</h4>
                 <select class="chosen-select" id="q5">
@@ -97,7 +96,6 @@
                   <option value="5">5 (Strongly Agree)</option>
                 </select>
             
-            
                 <h3><strong>Question 6</strong></h3>
                 <h4>It is often difficult for you to relate to other people’s feelings.</h4>
                 <select class="chosen-select" id="q6">
@@ -108,7 +106,6 @@
                   <option value="4">4</option>
                   <option value="5">5 (Strongly Agree)</option>
                 </select>
-            
             
                 <h3><strong>Question 7</strong></h3>
                 <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
@@ -192,6 +189,59 @@
             
                 </div>
               </div>
-          </div>
+
+        </div>
+        <script type="text/javascript">
+        
+        $(document).ready(function () {  
+          
+          let friendInput;
+          
+          class FriendConst {
+            constructor(friend_name, friend_pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) {
+              this.friend_name = friend_name;
+              this.friend_pic = friend_pic;
+              this.q1 = q1;
+              this.q2 = q2;
+              this.q3 = q3;
+              this.q4 = q4;
+              this.q5 = q5;
+              this.q6 = q6;
+              this.q7 = q7;
+              this.q8 = q8;
+              this.q9 = q9;
+              this.q10 = q10;
+            }
+          }
+          
+          // FriendConst.prototype.compare = ()=>{
+          //   console.log(this.name);
+          // };
+          
+          $("#submit").on("click", function() {
+            let name = $("#name").val();
+            let pic = $("#photo").val();
+            let q1 = $("#q1").val(); 
+            let q2 = $("#q2").val(); 
+            let q3 = $("#q3").val(); 
+            let q4 = $("#q4").val(); 
+            let q5 = $("#q5").val(); 
+            let q6 = $("#q6").val(); 
+            let q7 = $("#q7").val(); 
+            let q8 = $("#q8").val(); 
+            let q9 = $("#q9").val(); 
+            let q10 = $("#q10").val();
+          
+            friendInput = new FriendConst(name, pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+          
+            $.post("/api/friends", friendInput, function(friendData) {
+            $("#match-name").text(friendData[0].friend_name);
+            $("#match-img").attr("src", friendData[0].friend_pic);
+            $("#results-modal").modal("toggle");
+            
+            });
+          });
+        });
+        </script>
     </body>
 </html>
