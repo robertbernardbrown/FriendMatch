@@ -39,7 +39,6 @@ module.exports = (app) => {
       }
       friendDBActions.displayMatchFriendData(showData, index);
       function showData (arr) {
-        console.log(arr);
         res.json(arr);
       }
       friendDBActions.addToDB(newFriend.friend_name, newFriend.friend_pic, newFriend.q1,  newFriend.q2, newFriend.q3,  newFriend.q4, newFriend.q5, newFriend.q6, newFriend.q7, newFriend.q8, newFriend.q9, newFriend.q10);
