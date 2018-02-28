@@ -134,34 +134,32 @@
       //   console.log(this.name);
       // };
 
-      let questionsArr = 
-      ["You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people.",
-      "You feel more energetic after spending time with a group of people."];
+      let questionsArr = ["You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people.",
+        "You feel more energetic after spending time with a group of people."
+      ];
 
       displayQuestions(questionsArr);
 
-      function displayQuestions (arr) {
+      function displayQuestions(arr) {
         for (var i = 0; i < arr.length; i++) {
-          let questionNumber = $("<h3>").html("<strong>Question " + (i+1) + "</strong>");
+          let questionNumber = $("<h3>").html("<strong>Question " + (i + 1) + "</strong>");
           let questionText = $("<h4>").text(arr[i]);
-          let optionSet = $("<select>").addClass("chosen-select").attr("id", "q" + (i+1));
+          let optionSet = $("<select>").addClass("chosen-select").attr("id", "q" + (i + 1));
           for (var j = 0; j <= 5; j++) {
             let option;
             if (j === 1) {
               option = $("<option>").attr("value", j).text("1 (Strongly Disagree)")
-            } 
-            else if ( j === 5) {
+            } else if (j === 5) {
               option = $("<option>").attr("value", j).text("5 (Strongly Agree)")
-            } 
-            else {
+            } else {
               option = $("<option>").attr("value", j).text(j);
             }
             optionSet.append(option);
