@@ -1,10 +1,10 @@
 const mysql      = require("mysql");
 const connection = mysql.createConnection({
-  host     : "localhost",
-  user     : "root",
-  password : "root",
-  database : "palMatch_db",
-  port: 8889
+  host     : "us-cdbr-iron-east-05.cleardb.net",
+  user     : "bfb9298fa194ff",
+  password : "9be68183",
+  database : "heroku_7840f80c2d5aeb2",
+  port: 3306
 });
 
 module.exports = {
