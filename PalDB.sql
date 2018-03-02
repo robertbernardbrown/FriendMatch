@@ -13,10 +13,7 @@ CREATE TABLE pal (
 
 INSERT INTO palMatch_db.pal (pal_name, pal_pic)
 VALUES 
-("Bill", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/1280px-Hausziege_04.jpg"),
-("Champ", "http://cdn.akc.org/content/hero/puppy-boundaries_header.jpg"),
-("Steve", "https://images.pexels.com/photos/128756/pexels-photo-128756.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"),
-("Popo", "https://www.takemefishing.org/tmf/assets/images/fish/african-pompano-464x170.png");
+("Bob", "https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/19782_10155468809760317_1383438144655608382_n.jpg?oh=2e476a35951b7fc380763178fd8e92c8&oe=5B0F58DD");
 
 
 CREATE TABLE pal_responses (
@@ -36,10 +33,7 @@ CREATE TABLE pal_responses (
 
 INSERT INTO palMatch_db.pal_responses (question_01, question_02, question_03, question_04, question_05, question_06, question_07, question_08, question_09, question_10)
 VALUES 
-(2, 2, 4, 4, 2, 2, 2, 1, 2, 4),
-(1, 2, 5, 3, 4, 2, 5, 1, 4, 1),
-(3, 2, 1, 2, 2, 1, 2, 4, 1, 1),
-(3, 4, 1, 5, 4, 1, 5, 4, 3, 4);
+(3, 1, 4, 3, 3, 5, 3, 5, 2, 1);
 
 SELECT * FROM pal JOIN pal_responses ON pal_responses.pal_id = pal.pal_id;
 
