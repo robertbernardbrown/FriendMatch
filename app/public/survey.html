@@ -31,7 +31,7 @@
       <h1 class="text-center">
         <span class="glyphicon glyphicon-fire"></span> PeevePals</h1>
       <hr>
-      <h2 class="text-center">Find your optimal friend match based off mutual annoyance!</h2>
+      <h2 class="text-center">Rank your loathing for the situations below - 1 being least annoyed and 5 meaning you can't stand it!</h2>
       <br>
 
       <div class="text-center">
@@ -131,16 +131,16 @@
       }
 
       let questionsArr = 
-      ["You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people.",
-        "You feel more energetic after spending time with a group of people."
+      ["Loud chewing",
+        "Public displays of affection (PDA)",
+        "People asking to try some of your food",
+        "Using lots of #hashtags",
+        "People who bite their nails",
+        "People who stop walking in the middle of the sidewalk",
+        "When people mispell your name",
+        "Not cleaning up dog poop",
+        "People who sing out loud in public",
+        "Clapping at the end of a movie"
       ];
 
       displayQuestions(questionsArr);
@@ -153,9 +153,9 @@
           for (var j = 1; j <= 5; j++) {
             let option;
             if (j === 1) {
-              option = $("<option>").attr("value", j).text("1 (Strongly Disagree)")
+              option = $("<option>").attr("value", j).text("1 (I don't mind that)")
             } else if (j === 5) {
-              option = $("<option>").attr("value", j).text("5 (Strongly Agree)")
+              option = $("<option>").attr("value", j).text("5 (Can't stand it!)")
             } else {
               option = $("<option>").attr("value", j).text(j);
             }
