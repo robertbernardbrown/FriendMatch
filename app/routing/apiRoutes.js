@@ -1,4 +1,4 @@
-const palDBActions = require("../data/friends");
+const palDBActions = require("../data/pals");
 
 module.exports = (app) => {
 
