@@ -180,10 +180,13 @@
         let q10 = $("#q10").val();
 
         if (name === "") {
-          return alert("Please enter a name!");
+          return alert("Please enter your name!");
         }
         else if (pic === "") {
           return alert("Please enter a photo!");
+        }
+        else if (!pic.match(/\.(jpg|png|gif)/g)) {
+          return alert("Please use a picture URL link with a valid file extension (jpg, png, gif) i.e. 'sample.jpg'");
         }
 
         friendInput = new FriendConst(name, pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
