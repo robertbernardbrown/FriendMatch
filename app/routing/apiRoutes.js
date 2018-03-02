@@ -1,70 +1,70 @@
-const friendDBActions = require("../data/friends");
+const palDBActions = require("../data/friends");
 
 module.exports = (app) => {
 
-  app.get("/api/friends", (req, res) => {
-    friendDBActions.connect;
-    friendDBActions.displayFriendData(setData);
+  app.get("/api/pals", (req, res) => {
+    palDBActions.connect;
+    palDBActions.displayPalData(setData);
     function setData (arr) {
       res.json(arr);
     }
   });
   
-  app.post("/api/friends", (req, res) => {
-    friendDBActions.connect;
-    let newFriend = req.body;
-    let newFriendVals = 
+  app.post("/api/pals", (req, res) => {
+    palDBActions.connect;
+    let newPal = req.body;
+    let newPalVals = 
     [0, 
-      newFriend.q1,  
-      newFriend.q2, 
-      newFriend.q3,  
-      newFriend.q4, 
-      newFriend.q5, 
-      newFriend.q6, 
-      newFriend.q7, 
-      newFriend.q8, 
-      newFriend.q9, 
-      newFriend.q10];
-    friendDBActions.fetchFriendResponses(friendMatcher);
-    function friendMatcher (arr) {
+      newPal.q1,  
+      newPal.q2, 
+      newPal.q3,  
+      newPal.q4, 
+      newPal.q5, 
+      newPal.q6, 
+      newPal.q7, 
+      newPal.q8, 
+      newPal.q9, 
+      newPal.q10];
+    palDBActions.fetchPalResponses(PalMatcher);
+    function PalMatcher (arr) {
       let index = 0;
       let compareVal = 100;
       for (let i = 0; i < arr.length; i++) {
         let element = arr[i];
-        let friendVals = Object.values(element);
+        let palVals = Object.values(element);
         let diffArr = [];
         let difference;
-        for (var j = 1; j <= friendVals.length - 1; j++) {
-          let diff = Math.abs(friendVals[j] - newFriendVals[j]);
+        for (var j = 1; j <= palVals.length - 1; j++) {
+          let diff = Math.abs(palVals[j] - newPalVals[j]);
           diffArr.push(diff);
-          if (j === friendVals.length - 1) {
+          if (j === palVals.length - 1) {
             difference = diffArr.reduce((accumulate, currVal) => {
               return accumulate + currVal;
             });
             if (difference <= compareVal) {
               compareVal = difference;
-              index = friendVals[0];
+              index = palVals[0];
             }
           }
         }
       }
-      friendDBActions.displayMatchFriendData(showData, index);
+      palDBActions.displayMatchPalData(showData, index);
       function showData (arr) {
         res.json(arr);
       }
-      friendDBActions.addToDB(
-        newFriend.friend_name, 
-        newFriend.friend_pic, 
-        newFriend.q1,  
-        newFriend.q2, 
-        newFriend.q3,  
-        newFriend.q4, 
-        newFriend.q5, 
-        newFriend.q6, 
-        newFriend.q7, 
-        newFriend.q8, 
-        newFriend.q9, 
-        newFriend.q10);
+      palDBActions.addToDB(
+        newPal.pal_name, 
+        newPal.pal_pic, 
+        newPal.q1,  
+        newPal.q2, 
+        newPal.q3,  
+        newPal.q4, 
+        newPal.q5, 
+        newPal.q6, 
+        newPal.q7, 
+        newPal.q8, 
+        newPal.q9, 
+        newPal.q10);
     }
   });
 };

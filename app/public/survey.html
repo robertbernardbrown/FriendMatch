@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>FriendMatch Survey</title>
+  <title>Peeve Pals</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -29,9 +29,9 @@
 
     <div class="jumbotron">
       <h1 class="text-center">
-        <span class="glyphicon glyphicon-fire"></span> FriendMatch</h1>
+        <span class="glyphicon glyphicon-fire"></span> PeevePals</h1>
       <hr>
-      <h2 class="text-center">Find your perfect friend match!</h2>
+      <h2 class="text-center">Find your optimal friend match based off mutual annoyance!</h2>
       <br>
 
       <div class="text-center">
@@ -75,8 +75,8 @@
       <footer class="footer">
         <div class="container">
           <p>
-            <a href="/api/friends">API Friends List</a> |
-            <a target="_blank" href="https://github.com/robertbernardbrown/FriendMatch">GitHub Repo</a>
+            <a href="/api/pals">API Pals List</a> |
+            <a target="_blank" href="https://github.com/robertbernardbrown/PeevePals">GitHub Repo</a>
           </p>
         </div>
       </footer>
@@ -92,7 +92,7 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h2 class="modal-title">
-              <strong>Best Match</strong>
+              <strong>Your PeevePal</strong>
             </h2>
           </div>
           <div class="modal-body">
@@ -111,12 +111,12 @@
   <script type="text/javascript">
     $(document).ready(function () {
 
-      let friendInput;
+      let palInput;
 
-      class FriendConst {
-        constructor(friend_name, friend_pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) {
-          this.friend_name = friend_name;
-          this.friend_pic = friend_pic;
+      class PalConst {
+        constructor(pal_name, pal_pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) {
+          this.pal_name = pal_name;
+          this.pal_pic = pal_pic;
           this.q1 = q1;
           this.q2 = q2;
           this.q3 = q3;
@@ -189,11 +189,11 @@
           return alert("Please use a picture URL link with a valid file extension (jpg, png, gif) i.e. 'sample.jpg'");
         }
 
-        friendInput = new FriendConst(name, pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+        palInput = new PalConst(name, pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
-        $.post("/api/friends", friendInput, function (friendData) {
-          $("#match-name").text(friendData[0].friend_name);
-          $("#match-img").attr("src", friendData[0].friend_pic);
+        $.post("/api/pals", palInput, function (palData) {
+          $("#match-name").text(palData[0].pal_name);
+          $("#match-img").attr("src", palData[0].pal_pic);
           $("#results-modal").modal("toggle");
 
         });
