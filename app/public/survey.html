@@ -130,10 +130,6 @@
         }
       }
 
-      // FriendConst.prototype.compare = ()=>{
-      //   console.log(this.name);
-      // };
-
       let questionsArr = 
       ["You feel more energetic after spending time with a group of people.",
         "You feel more energetic after spending time with a group of people.",
@@ -154,7 +150,7 @@
           let questionNumber = $("<h3>").html("<strong>Question " + (i + 1) + "</strong>");
           let questionText = $("<h4>").text(arr[i]);
           let optionSet = $("<select>").addClass("chosen-select").attr("id", "q" + (i + 1));
-          for (var j = 0; j <= 5; j++) {
+          for (var j = 1; j <= 5; j++) {
             let option;
             if (j === 1) {
               option = $("<option>").attr("value", j).text("1 (Strongly Disagree)")
@@ -182,6 +178,13 @@
         let q8 = $("#q8").val();
         let q9 = $("#q9").val();
         let q10 = $("#q10").val();
+
+        if (name === "") {
+          return alert("Please enter a name!");
+        }
+        else if (pic === "") {
+          return alert("Please enter a photo!");
+        }
 
         friendInput = new FriendConst(name, pic, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 
