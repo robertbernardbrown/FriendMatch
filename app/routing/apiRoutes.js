@@ -3,7 +3,6 @@ const palDBActions = require("../data/pals");
 module.exports = (app) => {
 
   app.get("/api/pals", (req, res) => {
-    palDBActions.connect;
     palDBActions.displayPalData(setData);
     function setData (arr) {
       res.json(arr);
@@ -11,7 +10,6 @@ module.exports = (app) => {
   });
   
   app.post("/api/pals", (req, res) => {
-    palDBActions.connect;
     let newPal = req.body;
     let newPalVals = 
     [0, 

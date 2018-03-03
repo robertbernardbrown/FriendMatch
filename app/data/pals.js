@@ -15,15 +15,18 @@ module.exports = {
   }),
 
   displayPalData: function displayPalData (callback) {
-    let palArr=[];
-    connection.query("SELECT * FROM pal JOIN pal_responses ON pal_responses.pal_id = pal.pal_id", (err, res) => {
+    connection.getConnection(err=> {
       if (err) throw err;
-      for (var i = 0; i < res.length; i++) {
-        var element = res[i];
-        palArr.push(element);
-      }
-      callback(palArr);
-      connection.releaseConnection();
+      let palArr=[];
+      connection.query("SELECT * FROM pal JOIN pal_responses ON pal_responses.pal_id = pal.pal_id", (err, res) => {
+        if (err) throw err;
+        for (var i = 0; i < res.length; i++) {
+          var element = res[i];
+          palArr.push(element);
+        }
+        callback(palArr);
+        connection.releaseConnection();
+      });
     });
   },
 
@@ -36,15 +39,16 @@ module.exports = {
         palArr.push(element);
       }
       callback(palArr);
-      connection.releaseConnection();
     });
   },
 
   fetchPalResponses: function fetchPalResponses(callback) {
-    connection.query("SELECT * FROM pal_responses", (err, res) => {
+    connection.getConnection(err=> {
       if (err) throw err;
-      callback(res);
-      connection.releaseConnection();
+      connection.query("SELECT * FROM pal_responses", (err, res) => {
+        if (err) throw err;
+        callback(res);
+      });
     });
   },
 
