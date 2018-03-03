@@ -13,6 +13,10 @@
   },
   "author": "Bob",
   "license": "ISC",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
   "bugs": {
     "url": "https://github.com/robertbernardbrown/FriendMatch/issues"
   },
