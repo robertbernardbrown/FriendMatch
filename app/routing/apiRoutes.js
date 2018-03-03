@@ -25,6 +25,8 @@ module.exports = (app) => {
       newPal.q9, 
       newPal.q10];
     palDBActions.fetchPalResponses(PalMatcher);
+    //compares incoming pal info with existing pal info in the db and returns the index of the friend with the least difference
+    //in their array of answers
     function PalMatcher (arr) {
       let index = 0;
       let compareVal = 100;
