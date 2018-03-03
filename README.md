@@ -45,7 +45,7 @@ Please feel free to branch off and make some tweaks and make a PR. Open to any c
 * Add more sophisticated error handling
 * Refactor code for brevity and enhanced usability
 * Add more styling to page
-* Add a picture upload button to simplify the picture process for deksktop and mobile
+* Add a picture upload button to simplify the picture process for desktop and mobile
 
 ## Authors
 

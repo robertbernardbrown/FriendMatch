@@ -143,8 +143,8 @@
         "Clapping at the end of a movie"
       ];
 
+      //displays questions to page programmatically
       displayQuestions(questionsArr);
-
       function displayQuestions(arr) {
         for (var i = 0; i < arr.length; i++) {
           let questionNumber = $("<h3>").html("<strong>Question " + (i + 1) + "</strong>");
@@ -179,6 +179,7 @@
         let q9 = $("#q9").val();
         let q10 = $("#q10").val();
 
+        //validation
         if (name === "") {
           return alert("Please enter your name!");
         }

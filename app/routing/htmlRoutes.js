@@ -1,5 +1,6 @@
 const path = require("path");
 
+//exports html paths for static files to be sent to
 module.exports = (app) => {
 
   app.get("/survey", (req, res) => {

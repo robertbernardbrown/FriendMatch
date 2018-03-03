@@ -1,5 +1,6 @@
 const palDBActions = require("../data/pals");
 
+//exports get and post paths for the api for interacting with the pals db
 module.exports = (app) => {
 
   app.get("/api/pals", (req, res) => {

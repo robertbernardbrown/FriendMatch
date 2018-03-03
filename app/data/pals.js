@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   port: 3306
 });
 
-
+//Exports DB query code in pre-made functions
 module.exports = {
 
   displayPalData: function displayPalData (callback) {
