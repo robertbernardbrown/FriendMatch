@@ -46,8 +46,12 @@ module.exports = {
 
   addToDB: function addToDb(palName, palPic, answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10) {
     connection.query("INSERT INTO pal SET pal_name=?, pal_pic=?",
-      [palName, palPic]);
+      [palName, palPic], err => {
+        if (err) throw err;
+      });
     connection.query("INSERT INTO pal_responses SET question_01=?, question_02=?, question_03=?, question_04=?, question_05=?, question_06=?, question_07=?, question_08=?, question_09=?, question_10=?",
-      [answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10]);
+      [answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10], err => {
+        if (err) throw err;
+      });
   }
 };
