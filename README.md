@@ -2,6 +2,9 @@
 
 A fullstack app to determine friend-compatibility based off answers to a survey about pet peeves
 
+Click below to visit the site!
+[PeevePal App](hhttps://peevepals.herokuapp.com/)
+
 ## Screenshot
 
 <img src="Mocks/preview.png" width="300">
