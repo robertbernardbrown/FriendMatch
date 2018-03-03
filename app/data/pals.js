@@ -9,7 +9,9 @@ const connection = mysql.createConnection({
 
 module.exports = {
 
-  connect: connection.connect(),
+  connect: connection.connect(err=> {
+    if (err) throw err;
+  }),
 
   displayPalData: function displayPalData (callback) {
     let palArr=[];

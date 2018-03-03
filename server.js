@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path       = require("path");
 
 const app = express();
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 //LOAD MIDDLEWARE (BODYPARSER)
 app.use(bodyParser.urlencoded({ extended: false }));
