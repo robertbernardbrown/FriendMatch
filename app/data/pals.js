@@ -1,5 +1,5 @@
 const mysql      = require("mysql");
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host     : "us-cdbr-iron-east-05.cleardb.net",
   user     : "bfb9298fa194ff",
   password : "9be68183",
@@ -7,9 +7,10 @@ const connection = mysql.createConnection({
   port: 3306
 });
 
+
 module.exports = {
 
-  connect: connection.connect(err=> {
+  connect: connection.getConnection(err=> {
     if (err) throw err;
   }),
 
@@ -22,6 +23,7 @@ module.exports = {
         palArr.push(element);
       }
       callback(palArr);
+      connection.releaseConnection();
     });
   },
 
@@ -34,6 +36,7 @@ module.exports = {
         palArr.push(element);
       }
       callback(palArr);
+      connection.releaseConnection();
     });
   },
 
@@ -41,6 +44,7 @@ module.exports = {
     connection.query("SELECT * FROM pal_responses", (err, res) => {
       if (err) throw err;
       callback(res);
+      connection.releaseConnection();
     });
   },
 
@@ -53,5 +57,6 @@ module.exports = {
       [answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10], err => {
         if (err) throw err;
       });
+    connection.releaseConnection();
   }
 };
