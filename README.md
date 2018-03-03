@@ -5,6 +5,10 @@ A fullstack app to determine friend-compatibility based off answers to a survey 
 Click to visit the site!
 [PeevePal App](https://peevepals.herokuapp.com/)
 
+## WireFrame
+
+<img src="Mocks/Drawing.png" width="600">
+
 ## Screenshot
 
 <img src="Mocks/preview.png" width="600">
