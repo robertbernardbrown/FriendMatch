@@ -7,8 +7,8 @@ Click below to visit the site!
 
 ## Screenshot
 
-<img src="Mocks/preview.png" width="300">
-<img src="Mocks/preview2.png" width="300">
+<img src="Mocks/preview.png" width="400">
+<img src="Mocks/preview2.png" width="400">
 
 ## Getting Started
 
